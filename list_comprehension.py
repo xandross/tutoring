@@ -45,7 +45,24 @@ print("6.) Az össze embernek megfelelő 1-1 új person object, amik id-ja 10-ze
 print("7.) egyedi vezetéknevek") # set comprehension
 
 print("8.) {id -> (vezeték + keresztnév)} párok dictionary-ben") # dict comprehension (list input)
+people8 = {
+    p.id: p.last_name + " " + p.first_name
+    for p in people
+}
+print(people8.items(), sep='\n')
 
 print("9.) a 8-as eredményéből a páros id-júak value-ja") # dict comprehension (dict input)
+people9 = {
+    k: v
+    for (k,v) in people8.items()
+    if k % 2 == 0
+}
+print(people9.items(), sep='\n')
 
 print("10.) Az összes keresztnév összes karaketere egymás után egy listában") # 2 for
+people10 = [
+    x
+    for p in people
+    for x in p.first_name
+]
+print(*people10, sep='\n')
