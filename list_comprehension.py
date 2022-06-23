@@ -1,4 +1,6 @@
 import datetime
+import json
+import yaml
 
 class Person:
     def __init__(self, id: int, first_name: str, last_name: str, birth_date: datetime.date):
@@ -10,6 +12,10 @@ class Person:
     def __repr__(self):
         return "{0},{1},{2},{3}".format(self.id, self.first_name, self.last_name, self.birth_date)
 
+def printPeople(lst: list):
+    print("Emberek:")
+    print("")
+    print(*lst, sep='\n')
 
 people = [Person(1,"Janos","Kovacs",datetime.date(1980,1,1)),
         Person(2,"Gabor","Varga",datetime.date(1981,3,3)),
@@ -32,7 +38,7 @@ people2 = [
     for p in people             # FROM PERSON
     if p.last_name[0] == 'K'    # WHERE last_name like 'K%';
 ]
-print(*people2, sep='\n')
+printPeople(people2)
 
 print("3.) Kiss vezetéknevűek minden adata")
 
@@ -66,3 +72,5 @@ people10 = [
     for x in p.first_name
 ]
 print(*people10, sep='\n')
+
+x =  '{ "name":"John", "age":30, "city":"New York"}'
