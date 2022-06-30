@@ -11,11 +11,6 @@ class Person:
     def __repr__(self):
         return "{0},{1},{2},{3}".format(self.id, self.first_name, self.last_name, self.birth_date)
 
-def printPeople(lst: list):
-    print("Emberek:")
-    print("")
-    print(*lst, sep='\n')
-
 people = [Person(1,"Janos","Kovacs",datetime.date(1980,1,1)),
         Person(2,"Gabor","Varga",datetime.date(1981,3,3)),
         Person(3,"Mariann","Varga",datetime.date(2002,5,10)),
@@ -37,7 +32,7 @@ people2 = [
     for p in people             # FROM PERSON
     if p.last_name[0] == 'K'    # WHERE last_name like 'K%';
 ]
-printPeople(people2)
+print(*people2, sep='\n')
 
 print("3.) Kiss vezetéknevűek minden adata")
 
@@ -76,69 +71,22 @@ print(*people10, sep='\n')
 
 # HF 2. kör
 print("11.) 0-100 között a 7-tel osztható számok") # range
-num11 = [
-    p
-    for p in range(0, 101)
-    if p % 7 == 0
-]
-print(*num11, sep='\n')
 
 print("12.) az előző lista elemei az indexükkel dictben { (0->0), (1->7), (2->14) stb ...}") # zip + len + dict comp
-num12 = {
-    p[0] : p[1]
-    for p in zip(range(0, len(num11)), num11)
-}
-print(num12.items(), sep='\n')
 
 print("13.) input_num13 nested lista flattelve, 1 listában")
 input_num13 = [[[0, 1, 2], [3, 4, 5]], [[0, 1, 2], [3, 4, 5]], [[0, 1, 2], [3, 4, 5]], [[0, 1, 2], [3, 4, 5]]]
-num13 = [
-    x
-    for l1 in input_num13
-    for l2 in l1
-    for x in l2
-]
-print(*num13, sep='\n')
 
 print("14.) az input_num14 listából az int típusúak négyzete") # type
 input_num14 = [2, 2.3, 5.6, 8, 2+5j, 1.024e3, 0xF]
-num14 = [
-    x**2
-    for x in input_num14
-    if type(x) == int
-]
-print(*num14, sep='\n')
 
 print("15.) az input_num14 listából a nem complexek egészre kerekeítve") # round, type
-num15 = [
-    str(round(x, 0))
-    for x in input_num14
-    if type(x) != complex
-]
-print(*num15, sep='\n')
 
 print("16.) az input_num14 listából a (nem complexek és) 2 hatványok stringgé konvertálva") # math.log2, is_integer, str
-num16 = [
-    str(x)
-    for x in input_num14
-    if type(x) != complex and math.log2(x).is_integer()
-]
-print(*num16, sep='\n')
 
 print("17.) a people listából a páratlan karakterszámú vezetéknevűek") # len
-people17 = [
-    p
-    for p in people
-    if len(p.last_name) %2 == 1
-]
-print(*people17, sep='\n')
 
 print("18.) a people listából a vezetéknevek, de minden Kiss lecserélve Kis-re") # expression if
-people18 = [
-    p.last_name if p.last_name != 'Kiss' else 'Kis'
-    for p in people
-]
-print(*people18, sep='\n')
 
 print("19.) az alábbi szövegből a számok") # split, isnumeric
 text = """
@@ -146,16 +94,5 @@ text = """
 vagyis öt év alatt nagyjából 45 százalék volt a drágulás. Az utolsó, 2019-ben tartott fesztivál 110 ezréhez képest csaknem 
 20 százalékkal nőtt az egész hétre érvényes bérlet ára. Ami abból kiindulva igazából nem is sok, hogy az éves infláció 11 százalék közelében van.
 """
-nums19 = [
-    x
-    for x in text.split()
-    if x.isnumeric()
-]
-print(*nums19, sep='\n')
 
 print("20.) az előző szöveg mondatainak a karakterszáma") # split, isnumeric
-nums20 = [
-    len(x)
-    for x in text.split(". ")
-]
-print(*nums20, sep='\n')
