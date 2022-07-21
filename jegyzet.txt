@@ -1,0 +1,57 @@
+Debugger
+    Megakasztja a program futását (breakpoint)
+    információkat jelenít meg a memória állapotáról
+
+Fogalmak:
+    breakpoint (sima vagy conditional)
+    step (léptetés)
+        step over
+        step into
+        step out
+    Memória tartalma (Variables)
+    code evaluation
+        debug console (1x)
+        watch (mindig)
+
+
+
+Serializáció
+    strukturált adat vagy object konvertálása valamilyen tárolható/átküldhető formába (pl. file vagy byte tömb - series of bytes)
+
+Deserializáció
+    az eredeti struktúra visszaállítása
+
+Miért?
+    Adatátvitel - pl. 2 komponens között (pl. client-server), 2 rendszer között
+    Tárolás
+
+Miért nem triviális?
+    referenciák, nested objectek? Elhelyezkedés a memóriában
+    különböző rendszerek, különböző formátumok a memóriában (Java backend, JS frontend)
+
+Miért nem CSV vagy plain text?
+    struktúrát nem tudnak tárolni (...)
+    nem típusos
+
+Elterjedt formátumok
+    XML, JSON, YAML
+
+
+JSON
+    JavaScript Object Notation - JS-ből ered, de külön standard lett
+    gyorsan parse-olható (gép), könnyen olvasható (ember)
+
+"Szótár"
+
+Python	JSON
+
+dict	object
+list, tuple	array
+str	string
+int, long, float	number
+True	true
+False	false
+None	null
+
+
+
