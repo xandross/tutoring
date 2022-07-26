@@ -72,7 +72,8 @@ print(*people10, sep='\n')
 # HF 2. kör
 print("11.) 0-100 között a 7-tel osztható számok") # range
 
-print("12.) az előző lista elemei az indexükkel dictben { (0->0), (1->7), (2->14) stb ...}") # zip + len + dict comp
+print("12.) az input_num12 lista elemei az indexükkel dictben { (0->0), (1->7), (2->14) stb ...}") # zip + len + dict comp
+input_num12 = [0, 7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 91, 98]
 
 print("13.) input_num13 nested lista flattelve, 1 listában")
 input_num13 = [[[0, 1, 2], [3, 4, 5]], [[0, 1, 2], [3, 4, 5]], [[0, 1, 2], [3, 4, 5]], [[0, 1, 2], [3, 4, 5]]]
@@ -80,19 +81,40 @@ input_num13 = [[[0, 1, 2], [3, 4, 5]], [[0, 1, 2], [3, 4, 5]], [[0, 1, 2], [3, 4
 print("14.) az input_num14 listából az int típusúak négyzete") # type
 input_num14 = [2, 2.3, 5.6, 8, 2+5j, 1.024e3, 0xF]
 
-print("15.) az input_num14 listából a nem complexek egészre kerekeítve") # round, type
+print("15.) az input_num15 listából a nem complexek egészre kerekeítve") # round, type
+input_num15 = [2, 2.3, 5.6, 8, 2+5j, 1.024e3, 0xF]
 
-print("16.) az input_num14 listából a (nem complexek és) 2 hatványok stringgé konvertálva") # math.log2, is_integer, str
+print("16.) az input_num16 listából a (nem complexek és) 2 hatványok stringgé konvertálva") # math.log2, is_integer, str
+input_num16 = [2, 2.3, 5.6, 8, 2+5j, 1.024e3, 0xF]
 
-print("17.) a people listából a páratlan karakterszámú vezetéknevűek") # len
+print("17.) az input_people_17 listából a páratlan karakterszámú vezetéknevűek") # len
+input_people_17 = [Person(1,"Janos","Kovacs",datetime.date(1980,1,1)),
+        Person(2,"Gabor","Varga",datetime.date(1981,3,3)),
+        Person(3,"Mariann","Varga",datetime.date(2002,5,10)),
+        Person(4,"Bela","Kovacs",datetime.date(1981,2,3)),
+        Person(5,"Dora","Nagy",datetime.date(1985,5,10)),
+        Person(6,"Zsuzsa","Kiss",datetime.date(1990,8,11)),
+        Person(7,"Geza","Kiss",datetime.date(1990,6,10))]
 
-print("18.) a people listából a vezetéknevek, de minden Kiss lecserélve Kis-re") # expression if
+print("18.) az input_people_17 listából a vezetéknevek, de minden Kiss lecserélve Kis-re") # expression if
+input_people_17 = [Person(1,"Janos","Kovacs",datetime.date(1980,1,1)),
+        Person(2,"Gabor","Varga",datetime.date(1981,3,3)),
+        Person(3,"Mariann","Varga",datetime.date(2002,5,10)),
+        Person(4,"Bela","Kovacs",datetime.date(1981,2,3)),
+        Person(5,"Dora","Nagy",datetime.date(1985,5,10)),
+        Person(6,"Zsuzsa","Kiss",datetime.date(1990,8,11)),
+        Person(7,"Geza","Kiss",datetime.date(1990,6,10))]
 
 print("19.) az alábbi szövegből a számok") # split, isnumeric
-text = """
+input_text_19 = """
 Öt évvel ezelőtt, a Covid előtti – nemcsak fesztiváli értelemben vett – békeidőkben 89900 forint volt a normál árú Sziget-bérlet, 
 vagyis öt év alatt nagyjából 45 százalék volt a drágulás. Az utolsó, 2019-ben tartott fesztivál 110 ezréhez képest csaknem 
 20 százalékkal nőtt az egész hétre érvényes bérlet ára. Ami abból kiindulva igazából nem is sok, hogy az éves infláció 11 százalék közelében van.
 """
 
 print("20.) az előző szöveg mondatainak a karakterszáma") # split, isnumeric
+input_text_20 = """
+Öt évvel ezelőtt, a Covid előtti – nemcsak fesztiváli értelemben vett – békeidőkben 89900 forint volt a normál árú Sziget-bérlet, 
+vagyis öt év alatt nagyjából 45 százalék volt a drágulás. Az utolsó, 2019-ben tartott fesztivál 110 ezréhez képest csaknem 
+20 százalékkal nőtt az egész hétre érvényes bérlet ára. Ami abból kiindulva igazából nem is sok, hogy az éves infláció 11 százalék közelében van.
+"""
