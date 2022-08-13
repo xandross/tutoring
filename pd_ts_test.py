@@ -19,7 +19,6 @@ class TestSalesDataFrameCalc(unittest.TestCase):
         result = pd_ts.getPeriodSalesData(sdf, 'W', 'week')
 
         # assert: ellenőrzés
-        print(result.tail(20))
         self.assertEqual(len(result), 259)
         self.assertEqual(len(result.loc[(result['date'] == '2022-08-01') & (result['prev_weekly_sales_max'] == 253)]), 1)
 
@@ -32,7 +31,6 @@ class TestSalesDataFrameCalc(unittest.TestCase):
         result = pd_ts.getPeriodSalesData(sdf, 'Q', 'quarter')
 
         # assert: ellenőrzés
-        print(result.tail(20))
         self.assertEqual(len(result), 259)
         self.assertEqual(len(result.loc[(result['date'] == '2022-08-01') & (result['prev_quarterly_sales_max'] == 232)]), 1)
 
